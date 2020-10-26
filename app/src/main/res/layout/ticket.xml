@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/texto_datos_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datos_cliente" />
+
+        <EditText
+            android:id="@+id/datos_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="@string/ingresar_nombre"
+            android:inputType="textPersonName"
+            />
+
+        <Button
+            android:id="@+id/tiempo_est"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tiempo_est" />
+
+        <Button
+            android:id="@+id/mostrar_fact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mostrar_fact" />
+
+        <Button
+            android:id="@+id/detalles_fact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_factura" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Ticket_Estacionamiento</string>
+
+    <string name="ticket"> Ticket </string>
+
+    <string name="ac_mensual"> Acumulado mensual</string>
+
+    <string name="ac_diario"> Acumulado diario </string>
+
+    <string name="ac_dia_anterior"> Acumulado del día anterior</string>
+
+    <string name="config"> Configuración </string>
+
+    <string name="datos_cliente"> Datos del cliente </string>
+
+    <string name="ingresar_nombre"> Ingresar nombre y apellido </string>
+
+    <string name="tiempo_est"> Tiempo de estacionamiento </string>
+
+    <string name="mostrar_fact"> Mostrar factura </string>
+
+    <string name="det_factura"> Detalles de factura </string>
+
+</resources>

@@ -10,14 +10,16 @@ import android.widget.TextView;
 
 public class Ticket extends Activity {
 
-    public String datosCliente;
+    public String datosCliente = "Juan";
+
+    public double tiempoEstacionamiento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ticket);
 
-        //System.out.println(datosCliente);
+        System.out.println(datosCliente);
 
         //System.out.println(MainActivity.getTarifaFraccion());
 
@@ -29,8 +31,18 @@ public class Ticket extends Activity {
 
         datos_cliente.setOnEditorActionListener(teclado);
 
-        //System.out.println(datosCliente);
-    }
+
+        //Estas líneas permiten ingresar el tiempo de estacionamiento en su respectivo campo editText
+
+        EventoTeclado tecladoTiempo = new EventoTeclado();
+
+        EditText tiempo_est = (EditText)findViewById(R.id.tiempo_est);
+
+        tiempo_est.setOnEditorActionListener(tecladoTiempo);
+
+        System.out.println("fin del método onCreate");
+
+    }//fin del método onCreate
 
 
     /*Método para obtener el nombre del cliente
@@ -43,25 +55,27 @@ public class Ticket extends Activity {
         //System.out.println(datosCliente);
     }*/
 
-    //Creamos una clase interna
+    //Creamos una clase interna, no lo tengo claro, pero por lo que entiendo al ejecutar el método onEditorAction este toma el TextView dónde lo estoy ejecutando como campoTexto
     class EventoTeclado implements TextView.OnEditorActionListener{
 
-
         @Override
-        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        public boolean onEditorAction(TextView campoTexto, int actionId, KeyEvent event) {
 
             if(actionId == EditorInfo.IME_ACTION_DONE){
 
-                EditText campoTexto;
+                String cadena = campoTexto.getText().toString();
 
-
-                campoTexto = (EditText)findViewById(R.id.datos_cliente);
-
-                datosCliente = campoTexto.getText().toString();
-
-                campoTexto.setText("");
+                if(campoTexto.getId() == R.id.datos_cliente){
+                    datosCliente = cadena;
+                    campoTexto.setText("");
+                }
+                if(campoTexto.getId() == R.id.tiempo_est){
+                    tiempoEstacionamiento = Double.parseDouble(cadena);
+                    campoTexto.setText("");
+                }
 
                 System.out.println(datosCliente);
+                System.out.println(tiempoEstacionamiento);
             }
 
             return false;

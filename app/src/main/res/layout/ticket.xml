@@ -35,11 +35,13 @@
             android:inputType="textPersonName"
             />
 
-        <Button
+        <EditText
             android:id="@+id/tiempo_est"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tiempo_est" />
+            android:ems="10"
+            android:hint="Ingresar el tiempo de estacionamiento"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/mostrar_fact"
